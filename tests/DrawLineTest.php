@@ -45,6 +45,11 @@ class DrawLineTest extends PHPUnit_Framework_TestCase
         $line_drawer->map('m', 't');
         $this->assertEquals('I likelike turtles' ."\n", $line_drawer->draw('I {like:2} {murmles}'));
     }
+    public function testARenderSectionCanHaveMultipleRepeaters()
+    {
+        $line_drawer = new LineDrawer();
+        $this->assertEquals("AABB\n", $line_drawer->draw('{A:2B:2}'));
+    }
 }
 
 class LineMock extends LineDrawer
