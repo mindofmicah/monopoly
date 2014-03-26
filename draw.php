@@ -1,6 +1,9 @@
 <?php
-$pipes = createSpecialPipes();
-print_r($pipes);
+if (array_key_exists('WINDIR', $_SERVER)) {
+    $pipes = createWindowsPipes();
+} else {
+    $pipes = createSpecialPipes();
+} 
 
 //header('content-type:text/html; charset=UTF-8');
 $spaces = json_decode(file_get_contents('spaces.json'));
@@ -78,4 +81,20 @@ function createSpecialPipes()
     }
 
     return $pipes;
+}
+
+function createWindowsPipes()
+{
+    return array(
+        'pipe'=>'|',
+        'line'=>'-',
+        'left'=>'+',
+        'right'=>'+',
+        'up'=>'+',
+        'down'=>'+',
+        'topleft'=>'+',
+        'topright'=>'+',
+        'bottomleft'=>'+',
+        'bottomright'=>'+'
+    );    
 }
