@@ -13,7 +13,7 @@ class DrawLineTest extends PHPUnit_Framework_TestCase
     public function testACharacterCanBeRepeated()
     {
         $line_drawer = new LineDrawer();
-        $this->assertEquals("FF\n", $line_drawer->draw('{F:2}'));
+        $this->assertEquals("FF\n", $line_drawer->draw('{F2}'));
         // code...
     }
 
@@ -37,18 +37,41 @@ class DrawLineTest extends PHPUnit_Framework_TestCase
         $line_drawer = new LineDrawer();
         $line_drawer->map('m', 'F');
         $this->assertEquals("F\n", $line_drawer->draw('{m}'));
-        $this->assertEquals("FFF\n", $line_drawer->draw('{m:3}'));
+        $this->assertEquals("FFF\n", $line_drawer->draw('{m3}'));
     }
     public function testAComplicatedString()
     {
         $line_drawer = new LineDrawer();
         $line_drawer->map('m', 't');
-        $this->assertEquals('I likelike turtles' ."\n", $line_drawer->draw('I {like:2} {murmles}'));
+        $this->assertEquals('I likelike turtles' ."\n", $line_drawer->draw('I {/like2} {murmles}'));
     }
     public function testARenderSectionCanHaveMultipleRepeaters()
     {
         $line_drawer = new LineDrawer();
-        $this->assertEquals("AABB\n", $line_drawer->draw('{A:2B:2}'));
+        $this->assertEquals("AABB\n", $line_drawer->draw('{A2B2}'));
+    }
+
+    public function testOnlyRepeatAffectImmediateNeighbor()
+    {
+        $line = new LineDrawer;
+        $input = '{onlyrepeatb4}';
+        $expected = "onlyrepeatbbbb\n";
+        $this->assertEquals($expected, $line->draw($input));
+
+        $input = '{onlyrepeat/ab4}';
+        $expected = "onlyrepeatabababab\n";
+        $this->assertEquals($expected, $line->draw($input));
+
+
+        $line->map('tr', '+');
+        
+        $input = '{tr}';
+        $expected = "tr\n";
+        $this->assertEquals($expected, $line->draw($input));
+
+        $input = '{/tr}';
+        $expected = "+\n";
+        $this->assertEquals($expected, $line->draw($input));
     }
 }
 
