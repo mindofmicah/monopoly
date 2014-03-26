@@ -1,0 +1,17 @@
+{
+    "name": "mindofmicah/monopoly",
+    "description": "Draw a monopoly board in the command line",
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "authors": [
+        {
+            "name": "Micah",
+            "email": "micah@whamdonk.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    }
+}
