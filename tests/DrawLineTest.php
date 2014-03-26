@@ -43,7 +43,7 @@ class DrawLineTest extends PHPUnit_Framework_TestCase
     {
         $line_drawer = new LineDrawer();
         $line_drawer->map('m', 't');
-        $this->assertEquals('I likelike turtles' ."\n", $line_drawer->draw('I {/like2} {murmles}'));
+        $this->assertEquals('I likelike turtles' ."\n", $line_drawer->draw('I {/like2 murmles}'));
     }
     public function testARenderSectionCanHaveMultipleRepeaters()
     {
