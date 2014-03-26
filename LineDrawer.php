@@ -23,8 +23,12 @@ class LineDrawer
     }
     protected function render($str)
     {
-        if (preg_match('%(.+?):(\d+)%', $str, $matches)) {
-            return str_repeat(str_replace(array_keys($this->map), array_values($this->map), $matches[1]), $matches[2]);
+        if (preg_match_all('%(.+?):(\d+)%', $str, $matches,2)) {
+            $ret = '';
+            foreach ($matches as $match) {
+            $ret.=str_repeat(str_replace(array_keys($this->map), array_values($this->map), $match[1]), $match[2]);
+            }
+            return $ret;
         }
         return str_replace(array_keys($this->map), array_values($this->map), $str);
         echo "\nrender this...\n";
