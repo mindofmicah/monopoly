@@ -5,6 +5,18 @@
  require 'LineDrawer.php';
 class DrawLineTest extends PHPUnit_Framework_TestCase
 {
+    public function testAMapWithMultipleCharactersNeedsALeadingSlash()
+    {
+        $line = new LineMock;
+        $line->map('abc', 'b');
+        $this->assertEquals(array('/abc'=>'b'), $line->map);
+    }
+    public function testAMapShouldOnlyHaveOneLeadingSlash()
+    {
+        $line= new LineMock;
+        $line->map('/abc','b');
+        $this->assertEquals(array('/abc'=> 'b'), $line->map);
+    }
     public function testANonSpecialCharacterGetsTreatedNormally()
     {
         $line_drawer = new LineDrawer();
