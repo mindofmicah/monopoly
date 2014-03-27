@@ -56,27 +56,6 @@ echo "|" . str_repeat("    |", $row_count) . "    |"."\n";
 echo $pipes['bottomleft'] . '----+' . str_repeat("----┴", $row_count-2) . '----+----'. $pipes['bottomright'] . "\n";
 
 
-/*foreach ($spaces as $index => $space) {
-
-    if ($index == 0) {
-        echo 'first';
-        print_r($space);
-    } else if ($index == ($row_count - 1)) {
-        echo 'last';
-        print_r($space);
-    } else {
-        print_r($space);
-    }
-} 
-*/
-//print_r($spaces);//
-/*
-+---------------------------------------------------------------+
-| FP | IL |    |    |     |   |   |   |    |     |   |    | J |
-|    |$200|    |    |     |   |   |   |    |     |   |    |   |
-+----+----┴----┴----┴--┴--┴--┴--┴--┴--┴--┴--┴--┴--┴--┴--┴
-*/
-
 
 function createSpecialPipes()
 {
