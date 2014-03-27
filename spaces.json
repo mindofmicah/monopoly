@@ -4,14 +4,16 @@
             "abbr":"GO"
         },    {
             "abbr":"MD",
-            "price":"60 "
+            "price":"60 ",
+            "color":"purple"
         },
       {
             "abbr":"CC"
         },
       {
             "abbr":"BA",
-            "price":"80 "
+            "price":"80 ",
+            "color":"purple"
         },
       {
             "abbr":"LX",
@@ -19,11 +21,13 @@
         },
       {
             "abbr":"RR",
-            "price":"220"
+            "price":"220",
+            "color":"black"
         },
       {
             "abbr":"OR",
-            "price":"240"
+            "price":"240",
+            "color":"cyan"
         },
       {
             "abbr":"C",
@@ -31,32 +35,40 @@
         },
       {
             "abbr":"VT",
-            "price":"260"
+            "price":"260",
+            "color":"cyan"
         },
       {
             "abbr":"CT",
-            "price":"280"
+            "price":"280",
+            "color":"cyan"
         },{
             "abbr":"JL"
         },{
-            "abbr":"P1"
+            "abbr":"P1",
+            "color":"pink"
         },
    {
-            "abbr":"EC"
+            "abbr":"EC",
+            "color":"gray"
         },    {
             "abbr":"P2",
-            "price":"60 "
+            "price":"60 ",
+            "color":"pink"
         },
       {
-            "abbr":"P3"
+            "abbr":"P3",
+            "color":"pink"
         },
       {
             "abbr" : "SL",
-            "price":"200"
+            "price":"200",
+            "color":"black"
         },
       {
             "abbr":"O1",
-            "price":"220"
+            "price":"220",
+            "color":"orange"
         },
       {
             "abbr":"CC",
@@ -64,11 +76,13 @@
         },
       {
             "abbr":"O2",
-            "price":"240"
+            "price":"240",
+            "color":"orange"
         },
       {
             "abbr":"O3",
-            "price":"260"
+            "price":"260",
+            "color":"orange"
         },
       {
             "abbr":"FP",
@@ -76,32 +90,40 @@
         },
       {
             "abbr":"R1",
-            "price":"280"
+            "price":"280",
+            "color":"red"
         },{
             "abbr":"?"
         },{
-            "abbr":"R2"
+            "abbr":"R2",
+            "color":"red"
         },
    {
-            "abbr":"R3"
+            "abbr":"R3",
+            "color":"red"
         },    {
             "abbr":"BO",
-            "price":"60 "
+            "price":"60 ",
+            "color":"black"
         },
       {
-            "abbr":"Y1"
+            "abbr":"Y1",
+            "color":"yellow"
         },
       {
             "abbr":"Y2",
-            "price":"200"
+            "price":"200",
+            "color":"yellow"
         },
       {
             "abbr":"WW",
-            "price":"220"
+            "price":"220",
+            "color":"gray"
         },
       {
             "abbr":"Y3",
-            "price":"220"
+            "price":"220",
+            "color":"yellow"
         },
       {
             "abbr":"JAIL",
@@ -109,32 +131,39 @@
         },
       {
             "abbr":"G1",
-            "price":"260"
+            "price":"260",
+            "color":"green"
         },
       {
             "abbr":"G2",
-            "price":"260"
+            "price":"260",
+            "color":"green"
         },
       {
             "abbr":"CC",
             "price":"280"
         },{
-            "abbr":"G3"
+            "abbr":"G3",
+            "color":"green"
         },{
-            "abbr":"SL"
+            "abbr":"SL",
+            "color":"black"
+
         },
    {
             "abbr":"?"
         },    {
             "abbr":"PP",
-            "price":"60 "
+            "price":"60 ",
+            "color":"blue"
         },
       {
             "abbr":"LX"
         },
       {
             "abbr":"BW",
-            "price":"200"
+            "price":"200",
+            "color":"blue"
         }
     ]
 }

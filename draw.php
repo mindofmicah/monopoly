@@ -63,16 +63,36 @@ $ret.=$line->draw('{rh4+}' . str_repeat("{h4u}", $row_count - 3) . '{h4+h4l}');
 echo $ret;
 
 
+
 function drawSpace($space)
 {
+$colors = array(
+    'red'=>41,
+    'green'=>'42',
+    'yellow'=>'48;5;11',
+    'blue'=>44,
+    'purple'=>45,
+    'black'=>40,
+    'cyan'=>'48;5;159',
+    'pink'=>'48;5;170',
+    'orange'=>'48;5;208',
+    'gray'=>'47'
+);
+
+
     if (property_exists($space,'price')) {
         $line3= '$'. $space->price .'{v}';
     } else {
         $line3= '{ 4v}';
     }
 
+    $line1 = str_pad($space->abbr,4, ' ', STR_PAD_LEFT);
+//    echo property_exists($space, 'color');
+    if (property_exists($space, 'color') && array_key_exists($space->color, $colors) ) {
+        $line1 = "\033[".$colors[$space->color]."m". $line1 ."\033[0m";
+    }
     return [
-        str_pad($space->abbr, 4, ' ', STR_PAD_LEFT).'{v}',
+        $line1.'{v}',
         '{    v}',
         $line3
     ];
@@ -85,6 +105,8 @@ function drawSpace($space)
 
 $ret = '';
 $spaces_str = '{ ' .(($row_count - 2) *5 -1) . '}';
+$end_index++;
+$start_index--;
 while ($end_index < count($spaces)) {
     if ($ret != '') {
        $ret.=$line->draw('{rh4l}' . $spaces_str . '{rh4l}');
