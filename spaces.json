@@ -1,0 +1,44 @@
+{
+    "spaces" : [{
+            "abbr":"GO"
+        },    {
+            "abbr":"BA",
+            "price":"60 "
+        },
+      {
+            "abbr":"LX"
+        },
+      {
+            "abbr":"IA",
+            "price":"200"
+        },
+      {
+            "abbr":"IA",
+            "price":"220"
+        },
+      {
+            "abbr":"IA",
+            "price":"220"
+        },
+      {
+            "abbr":"IA",
+            "price":"240"
+        },
+      {
+            "abbr":"IA",
+            "price":"260"
+        },
+      {
+            "abbr":"IA",
+            "price":"260"
+        },
+      {
+            "abbr":"IA",
+            "price":"280"
+        },{
+            "abbr":"JL"
+        },{
+            "abbr":"Jail"
+        }
+    ]
+}
