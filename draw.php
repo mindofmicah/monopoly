@@ -37,18 +37,16 @@ echo $line->draw('{rh4+}' . str_repeat("{h4u}", $row_count-2) . '{h4+h4l}');
 
 foreach(range(1, $row_count - 2) as $index) {
 if($index != 1) {
-echo $pipes['right'] .'----'.$pipes['left'] . str_repeat(" ", ($row_count-2)*5) . "    ".$pipes['right']."----" . $pipes['left']. "\n";
+echo $line->draw('{rh4l' . str_repeat(" ", ($row_count-2)*5) . ' 4rh4l}');
 }
 
-echo "|    |" . str_repeat(" ", ($row_count-2)*5) . "    |    |". "\n";
-//echo $index .':'. $row_count / 2;
+echo $line->draw("{v 4v" . str_repeat(" ", ($row_count-2)*5) . " 4v 4v}");
 if ($index == floor($row_count/2)) {
-
-echo "|    |" .   "                       MONOPOLY              "         ."    |    |". "\n";
+    echo "|    |" .   "                       MONOPOLY              "         ."    |    |". "\n";
 } else {
-echo "|    |" . str_repeat(" ", ($row_count-2)*5) . "    |    |". "\n";
+echo $line->draw("{v 4v" . str_repeat(" ", ($row_count-2)*5) . " 4v 4v}");
 }
-echo "|    |" . str_repeat(" ", ($row_count-2)*5) . "    |    |". "\n";
+echo $line->draw("{v 4v" . str_repeat(" ", ($row_count-2)*5) . " 4v 4v}");
 }
 
 echo "├----+" . str_repeat("----┬", $row_count - 2) . "----+----┤" . "\n";
