@@ -10,11 +10,30 @@ $spaces = json_decode(file_get_contents('spaces.json'));
 $spaces = $spaces->spaces;
 $row_count = count($spaces);
 
-echo $pipes['topleft'] . str_repeat($pipes['line'].$pipes['line']. $pipes['line'] . $pipes['line'] . $pipes['down'], $row_count) . $pipes['line'] .$pipes['line'] . $pipes['line'] . $pipes['line'] . $pipes['topright'] . "\n";
-echo "|" . str_repeat("    |", $row_count) . "    |". "\n";
-echo "|" . str_repeat("    |", $row_count) . "    |"."\n" ;
-echo "|" . str_repeat("    |", $row_count) . "    |"."\n";
-echo $pipes['right'] . '----+' . str_repeat("----" . $pipes['up'], $row_count-2) . '----+----' .$pipes['left'] . "\n";
+require 'LineDrawer.php';
+$line = new LineDrawer;
+$line->map('tl', $pipes['topleft']);
+$line->map('tr', $pipes['topright']);
+$line->map('bl', $pipes['bottomleft']);
+$line->map('br', $pipes['bottomright']);
+$line->map('u', $pipes['up']);
+$line->map('l', $pipes['left']);
+$line->map('r', $pipes['right']);
+$line->map('d', $pipes['down']);
+//$line->map('tl','asdf');
+$line->map('h', $pipes['line']);
+$line->map('v', $pipes['pipe']);
+$line->map('+', $pipes['plus']);
+
+echo $line->draw('{/tl}{'.  str_repeat('h4d', $row_count).'}{h4/tr}');
+echo $line->draw('{v/    v'.$row_count.'    v}');
+echo $line->draw('{v/    v'.$row_count.'    v}');
+echo $line->draw('{v/    v'.$row_count.'    v}');
+echo $line->draw('{rh4+}' . str_repeat("{h4u}", $row_count-2) . '{h4+h4l}');
+
+//echo $line->draw('{v}{v' .$row_count .'}');
+//die();
+//echo $pipes['topleft'] . str_repeat($pipes['line'].$pipes['line']. $pipes['line'] . $pipes['line'] . $pipes['down'], $row_count) . $pipes['line'] .$pipes['line'] . $pipes['line'] . $pipes['line'] . $pipes['topright'] . "\n";
 
 foreach(range(1, $row_count - 2) as $index) {
 if($index != 1) {
@@ -38,7 +57,6 @@ echo "|" . str_repeat("    |", $row_count) . "    |"."\n" ;
 echo "|" . str_repeat("    |", $row_count) . "    |"."\n";
 echo $pipes['bottomleft'] . '----+' . str_repeat("----┴", $row_count-2) . '----+----'. $pipes['bottomright'] . "\n";
 
-echo "\u2122";
 
 /*foreach ($spaces as $index => $space) {
 
@@ -95,6 +113,7 @@ function createWindowsPipes()
         'topleft'=>'+',
         'topright'=>'+',
         'bottomleft'=>'+',
-        'bottomright'=>'+'
+        'bottomright'=>'+',
+        'plus'=>'+'
     );    
 }
