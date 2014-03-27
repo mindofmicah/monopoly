@@ -8,8 +8,10 @@ if (array_key_exists('WINDIR', $_SERVER)) {
 
 //header('content-type:text/html; charset=UTF-8');
 $spaces = json_decode(file_get_contents('spaces.json'));
+
+
 $spaces = $spaces->spaces;
-$row_count = count($spaces);
+$row_count = count($spaces) / 4 + 1;
 
 require 'LineDrawer.php';
 $line = new LineDrawer;
@@ -27,9 +29,9 @@ $line->map('v', $pipes['pipe']);
 $line->map('+', $pipes['plus']);
 
 echo $line->draw('{/tl}{' . str_repeat('h4d', $row_count) . '}{h4/tr}');
+echo $line->draw('{v/ IL v' . $row_count . '    v}');
 echo $line->draw('{v/    v' . $row_count . '    v}');
-echo $line->draw('{v/    v' . $row_count . '    v}');
-echo $line->draw('{v/    v' . $row_count . '    v}');
+echo $line->draw('{v/$TWOv' . $row_count . '    v}');
 echo $line->draw('{rh4+}' . str_repeat("{h4u}", $row_count - 2) . '{h4+h4l}');
 
 //echo $line->draw('{v}{v' .$row_count .'}');
@@ -51,11 +53,25 @@ foreach (range(1, $row_count - 2) as $index) {
     echo $line->draw("{v 4v" . str_repeat(" ", ($row_count - 2) * 5) . " 4v 4v}");
 }
 
-echo $line->draw("{rh4+/hhhhd" . ($row_count - 2) . "/h4+/h4l}");
-echo $line->draw("{v/    v" . $row_count . "/ 4v}");
-echo $line->draw("{v/    v" . $row_count . "/ 4v}");
-echo $line->draw("{v/    v" . $row_count . "/ 4v}");
-echo $line->draw('{/bl/h4u/hhhhu' . ($row_count - 2) . '/h4u/h4/br' . '}');
+$ret = $line->draw("{rh4+/hhhhd" . ($row_count - 2) . "/h4+/h4l}");
+$line1 ='';
+$line2 = '';
+$line3 = '';
+for ($i = 0; $i <= $row_count; $i++) {
+    $line1 = '{ '.$spaces[$i]->abbr.' v}'.$line1;
+    if (property_exists($spaces[$i],'price')) {
+        $line3 = '$'. $spaces[$i]->price .'{v}'. $line3;
+    } else {
+        $line3 = '{ 4v}'.$line3;
+    }
+
+}
+$ret.= $line->draw('{v}'.$line1);
+$ret.= $line->draw("{v/    v" . $row_count . "/ 4v}");
+$ret.= $line->draw('{v}'. $line3);
+$ret.= $line->draw('{/bl/h4u/hhhhu' . ($row_count - 2) . '/h4u/h4/br' . '}');
+
+echo $ret;
 
 function createSpecialPipes()
 {
