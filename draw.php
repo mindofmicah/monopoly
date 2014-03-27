@@ -55,7 +55,7 @@ echo $line->draw("{rh4+/hhhhd" . ($row_count - 2) . "/h4+/h4l}");
 echo $line->draw("{v/    v" . $row_count . "/ 4v}");
 echo $line->draw("{v/    v" . $row_count . "/ 4v}");
 echo $line->draw("{v/    v" . $row_count . "/ 4v}");
-echo $line->draw('{/bl/h4+/hhhhu' . ($row_count - 2) . '/h4+/h4/br' . '}');
+echo $line->draw('{/bl/h4u/hhhhu' . ($row_count - 2) . '/h4u/h4/br' . '}');
 
 function createSpecialPipes()
 {
@@ -69,7 +69,8 @@ function createSpecialPipes()
         'topleft'     => '250C',
         'topright'    => '2510',
         'bottomleft'  => '2514',
-        'bottomright' => '2518'
+        'bottomright' => '2518',
+        'plus' => '253C'
     );
     foreach ($pipes as $key => $code) {
         $pipes[$key] = json_decode('"\u' . $code . '"');
