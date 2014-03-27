@@ -42,6 +42,7 @@ echo $line->draw('{rh4l' . str_repeat(" ", ($row_count-2)*5) . ' 4rh4l}');
 
 echo $line->draw("{v 4v" . str_repeat(" ", ($row_count-2)*5) . " 4v 4v}");
 if ($index == floor($row_count/2)) {
+    // TODO Update this to new syntax
     echo "|    |" .   "                       MONOPOLY              "         ."    |    |". "\n";
 } else {
 echo $line->draw("{v 4v" . str_repeat(" ", ($row_count-2)*5) . " 4v 4v}");
@@ -49,11 +50,11 @@ echo $line->draw("{v 4v" . str_repeat(" ", ($row_count-2)*5) . " 4v 4v}");
 echo $line->draw("{v 4v" . str_repeat(" ", ($row_count-2)*5) . " 4v 4v}");
 }
 
-echo "├----+" . str_repeat("----┬", $row_count - 2) . "----+----┤" . "\n";
-echo "|" . str_repeat("    |", $row_count) . "    |". "\n";
-echo "|" . str_repeat("    |", $row_count) . "    |"."\n" ;
-echo "|" . str_repeat("    |", $row_count) . "    |"."\n";
-echo $pipes['bottomleft'] . '----+' . str_repeat("----┴", $row_count-2) . '----+----'. $pipes['bottomright'] . "\n";
+echo $line->draw("{rh4+/hhhhd" . ($row_count - 2) . "/h4+/h4l}");
+echo $line->draw( "{v/    v" . $row_count . "/ 4v}");
+echo $line->draw( "{v/    v" . $row_count . "/ 4v}");
+echo $line->draw( "{v/    v" . $row_count . "/ 4v}");
+echo $line->draw('{/bl/h4+/hhhhu' . ($row_count-2) . '/h4+/h4/br'.'}');
 
 
 
