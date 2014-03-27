@@ -1,44 +1,140 @@
 {
-    "spaces" : [{
+    "spaces" : [
+       {
             "abbr":"GO"
         },    {
+            "abbr":"MD",
+            "price":"60 "
+        },
+      {
+            "abbr":"CC"
+        },
+      {
             "abbr":"BA",
+            "price":"80 "
+        },
+      {
+            "abbr":"LX",
+            "price":"220"
+        },
+      {
+            "abbr":"RR",
+            "price":"220"
+        },
+      {
+            "abbr":"OR",
+            "price":"240"
+        },
+      {
+            "abbr":"C",
+            "price":"260"
+        },
+      {
+            "abbr":"VT",
+            "price":"260"
+        },
+      {
+            "abbr":"CT",
+            "price":"280"
+        },{
+            "abbr":"JL"
+        },{
+            "abbr":"P1"
+        },
+   {
+            "abbr":"EC"
+        },    {
+            "abbr":"P2",
+            "price":"60 "
+        },
+      {
+            "abbr":"P3"
+        },
+      {
+            "abbr" : "SL",
+            "price":"200"
+        },
+      {
+            "abbr":"O1",
+            "price":"220"
+        },
+      {
+            "abbr":"CC",
+            "price":"220"
+        },
+      {
+            "abbr":"O2",
+            "price":"240"
+        },
+      {
+            "abbr":"O3",
+            "price":"260"
+        },
+      {
+            "abbr":"FP",
+            "price":"260"
+        },
+      {
+            "abbr":"R1",
+            "price":"280"
+        },{
+            "abbr":"?"
+        },{
+            "abbr":"R2"
+        },
+   {
+            "abbr":"R3"
+        },    {
+            "abbr":"BO",
+            "price":"60 "
+        },
+      {
+            "abbr":"Y1"
+        },
+      {
+            "abbr":"Y2",
+            "price":"200"
+        },
+      {
+            "abbr":"WW",
+            "price":"220"
+        },
+      {
+            "abbr":"Y3",
+            "price":"220"
+        },
+      {
+            "abbr":"JAIL",
+            "price":"240"
+        },
+      {
+            "abbr":"G1",
+            "price":"260"
+        },
+      {
+            "abbr":"G2",
+            "price":"260"
+        },
+      {
+            "abbr":"CC",
+            "price":"280"
+        },{
+            "abbr":"G3"
+        },{
+            "abbr":"SL"
+        },
+   {
+            "abbr":"?"
+        },    {
+            "abbr":"PP",
             "price":"60 "
         },
       {
             "abbr":"LX"
         },
       {
-            "abbr":"IA",
+            "abbr":"BW",
             "price":"200"
-        },
-      {
-            "abbr":"IA",
-            "price":"220"
-        },
-      {
-            "abbr":"IA",
-            "price":"220"
-        },
-      {
-            "abbr":"IA",
-            "price":"240"
-        },
-      {
-            "abbr":"IA",
-            "price":"260"
-        },
-      {
-            "abbr":"IA",
-            "price":"260"
-        },
-      {
-            "abbr":"IA",
-            "price":"280"
-        },{
-            "abbr":"JL"
-        },{
-            "abbr":"Jail"
         }
     ]
 }
