@@ -1,3 +1,14 @@
+require.config({
+    paths : {
+        'jquery' : "app/bower_components/jquery/dist/jquery",
+        'underscore':"app/bower_components/underscore/underscore",
+        'backbone':"app/bower_components/backbone/backbone"
+    }
+});
+
+require (['jquery', 'backbone'], function ($, Backbone)  {
+
+
 var pubsub = _.extend(Backbone.Events);
 
 
@@ -72,3 +83,5 @@ var App = Backbone.View.extend({
 });
 
 new App({el:$('body')});
+
+});
