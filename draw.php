@@ -80,7 +80,7 @@ $colors = array(
 );
 
 
-    if (property_exists($space,'price')) {
+    if (property_exists($space,'price') && $space->price > 0) {
         $line3= '$'. $space->price .'{v}';
     } else {
         $line3= '{ 4v}';
